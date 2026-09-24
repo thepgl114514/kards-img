@@ -1,25 +1,19 @@
-# KARDS 图床(jsDelivr)
+# Voyager · DarkStar 资源仓库
 
-本目录由 `scripts/prepare-gh-cdn.mjs` 生成,用来配合 jsDelivr 做免费 CDN。
+这是 [Voyager · DarkStar](https://voyager-kards.pages.dev) 的资源镜像,通过 **jsDelivr CDN** 分发,不占用站点带宽。
 
-- `thumb/` : 卡牌列表用的 300px 缩略图
-- `img/`   : (可选)原图
+## 目录
 
-## 用到的地址
+| 目录 | 内容 | 直链格式 |
+| --- | --- | --- |
+| `img/` | 卡图原图 | `https://cdn.jsdelivr.net/gh/<user>/<repo>@main/img/<cardId>.png` |
+| `thumb/` | 卡图缩略图 | `.../thumb/<cardId>.jpg` |
+| `res/avatars/` | 官方头像 74 张 | `.../res/avatars/<file>` |
+| `res/hq/` | 总部素材 25 条(卡图 + 背景) | `.../res/hq/<file>` |
+| `res/cardbacks/` | 卡背 485 个 | `.../res/cardbacks/<file>` |
+| `all-thumbs.zip` | 全量缩略图整包 | `.../all-thumbs.zip` |
 
-jsDelivr 的规则是 `https://cdn.jsdelivr.net/gh/<用户名>/<仓库名>@<分支>/<路径>`,
-例如仓库是 `yourname/kards-img`、分支 `main`,那么:
+## 说明
 
-- 缩略图:`https://cdn.jsdelivr.net/gh/yourname/kards-img@main/thumb/1005th_rifles.jpg`
-- 原图:  `https://cdn.jsdelivr.net/gh/yourname/kards-img@main/img/1005th_rifles.png`
-
-## 接进本站
-
-在 Cloudflare 里给 Worker 与 Pages 各加一个变量(不需要密钥):
-
-```
-IMG_CDN_BASE = https://cdn.jsdelivr.net/gh/yourname/kards-img@main/img
-```
-
-填好之后,`/img/<id>.png` 会优先从 jsDelivr 取,命中边缘缓存,不再消耗 KV 读额度。
-详见 `docs/github-cdn.md`。
+- 资源版权归 **1939 Games** 所有,本仓库仅作玩家交流与学习用途,不作商业使用。
+- 与游戏厂商无隶属关系。
